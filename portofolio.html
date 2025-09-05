@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Rasul Rajab</title>
+</head>
+
+<body>
+    <img src="fotoku.jpg" alt="Foto Profil Rasul Rajab" />
+    <h1>Rasul Rajab</h1>
+
+    <p>🎮 Pecinta Game | 💻 Mahasiswa JTIK | 🚀 Belajar Pemrograman Web </p>
+
+    <h2>Tentang Saya</h2>
+    <p>
+        Hai! Saya <b>Rasul Rajab</b>, mahasiswa yang sedang belajar membuat website keren dengan HTML & CSS.
+        Saya suka bermain game, menonton dracin dari tiktok, dan eksplorasi dunia teknologi.
+        Saya percaya bahwa belajar itu menyenangkan jika dilakukan dengan semangat!
+    </p>
+
+    <h2>Keahlian</h2>
+    <p>
+        ✅ Bermain Game<br>
+        ✅ Desain Web Sederhana<br>
+        ✅ Kerja Tim & Komunikasi
+    </p>
+
+    <h2>Pendidikan</h2>
+    <p>
+        🎓 Universitas Negeri Makassar — Program Studi Teknik Komputer (2024–Sekarang)
+    </p>
+
+    <h2>Kontak</h2>
+    <p>
+        📧 Email: <a href="mailto:mosajarasul@gmail.com">mosajarasul@gmail.com</a><br>
+        📱 Instagram: <a href="https://instagram.com/_rasull14">@_rsull14</a><br>
+    </p>
+
+</body>
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: url('background.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        margin: 0;
+        padding: 40px 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        line-height: 1.8;
+        position: relative;
+    }
+
+
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center 30%;
+        border: 5px solid white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        animation: float 3s ease-in-out infinite alternate;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(-12px);
+        }
+    }
+
+    img:hover {
+        transform: scale(1.15) translateY(-12px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        margin: 10px 0 10px;
+        color: white;
+        text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out 0.2s forwards;
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin: 10px auto;
+        max-width: 600px;
+        opacity: 0;
+        animation: fadeIn 0.7s ease-out 0.4s forwards;
+    }
+
+    h2 {
+        font-size: 1.9rem;
+        margin: 50px 0 25px;
+        color: #fff;
+        border-bottom: 3px solid rgba(255, 255, 255, 0.6);
+        padding-bottom: 8px;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out 0.6s forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+    a {
+        color: #ffffff;
+        padding: 3px 8px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    a:hover {
+        background: #cccccc;
+        color: #ffffff;
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        img {
+            width: 120px;
+            height: 120px;
+        }
+
+        body {
+            padding: 30px 15px;
+        }
+    }
+</style>
+
+</html>
