@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Rasul Rajab</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="portofolio2.html">Beranda</a>
+        <a href="galeri.html">Galeri Foto</a>
+    </div>
+
+        <img src="fotoku.jpg" alt="Foto Profil Rasul Rajab" class="profile">
+        <h1>Rasul Rajab</h1>
+        <p>🎮 Pecinta Game | 💻 Mahasiswa JTIK | 🚀 Belajar Pemrograman Web </p>
+
+        <h2>Tentang Saya</h2>
+        <p>
+            Hai! Saya <b>Rasul Rajab</b>, mahasiswa yang sedang belajar membuat website keren dengan HTML & CSS.
+            Saya suka bermain game, menonton dracin dari tiktok, dan eksplorasi dunia teknologi.
+        </p>
+
+        <h2>Keahlian</h2>
+        <p>
+            ✅ Bermain Game<br>
+            ✅ Desain Web Sederhana<br>
+            ✅ Kerja Tim & Komunikasi
+        </p>
+
+        <h2>Pendidikan</h2>
+        <p>
+            🎓 Universitas Negeri Makassar — Program Studi Teknik Komputer (2024–Sekarang)
+        </p>
+
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/rasul-rajab-tekom-e" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+            <a href="https://github.com/Mr-Apostle" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="mailto:mosajarasul@gmail.com" target="_blank"><i class='bx bxl-gmail'></i></a>
+            <a href="https://instagram.com/_rsull14" target="_blank"><i class='bx bxl-instagram'></i></a>
+        </div>
+</body>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: url('background.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        line-height: 1.6;
+        text-align: center;
+        scroll-behavior: smooth;
+    }
+
+    body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.65);
+        z-index: -1;
+        backdrop-filter: blur(2px);
+    }
+
+    .navbar {
+        backdrop-filter: blur(12px);
+        background: rgba(40, 40, 40, 0.7);
+        padding: 15px 30px;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 18px;
+        border-radius: 25px;
+        transition: all 0.35s ease;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        position: relative;
+    }
+
+    .navbar a:hover {
+        background: linear-gradient(135deg, #ff9800, #ff5722);
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(255, 152, 0, 0.5);
+        transform: translateY(-2px);
+    }
+
+    img.profile {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 6px solid white;
+        margin-top: 50px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    img.profile:hover {
+        transform: scale(1.12) rotate(2deg);
+        box-shadow: 0 15px 35px rgba(255, 152, 0, 0.6);
+    }
+
+    h1 {
+        margin: 20px 0 12px;
+        font-size: 2.8rem;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        animation: fadeInDown 1s ease-out;
+    }
+
+        h2 {
+            border-bottom: 3px solid transparent;
+            background: linear-gradient(90deg, #ff9800, #ff5722);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            width: fit-content;
+            margin: 50px auto 25px;
+            padding-bottom: 5px;
+            font-size: 2rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #ff9800, #ff5722);
+            border-radius: 5px;
+            animation: slideIn 1.2s ease forwards;
+    }
+
+    p {
+        max-width: 720px;
+        margin: 12px auto;
+        font-size: 1.15rem;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+        line-height: 1.7;
+        animation: fadeInUp 1.2s ease;
+    }
+
+    .social-icons {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .social-icons a {
+        font-size: 2rem;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        color: #ff9800;
+        transform: scale(1.2);
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 100%;
+        }
+    }
+</style>
+
+</html>
