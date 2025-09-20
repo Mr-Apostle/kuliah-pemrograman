@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kalkulator</title>
+    </head>
+    <body>
+        <h3>Kalkulator</h3>
+        <input type="text" id="angka1" placeholder="Angka pertama">
+        <input type="text" id="angka2" placeholder="Angka kedua"><br><br>
+
+        <button onclick="hitung('+')">+</button>
+        <button onclick="hitung('-')">-</button>
+        <button onclick="hitung('*')">*</button>
+        <button onclick="hitung('/')">/</button>
+
+        <p>Hasil: <span id="hasil"></span></p>
+
+        <script>
+            function hitung(operator){
+                let a = parseFloat(document.getElementById("angka1").value);
+                let b = parseFloat(document.getElementById("angka2").value);
+                let hasil = 0;
+
+                if (operator == '+') hasil = a + b;
+                else if (operator == '-') hasil = a - b;
+                else if (operator == '*') hasil = a * b;
+                else if (operator == '/') hasil = a / b;
+                
+                document.getElementById("hasil").innerText = hasil;
+            }
+        </script>
+    </body>
+</html>
