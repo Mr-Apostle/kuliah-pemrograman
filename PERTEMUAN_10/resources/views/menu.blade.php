@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko Syahrul - Menu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white relative">
+
+  <header class="absolute inset-x-0 top-0 z-50">
+    <div class="text-center py-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-white drop-shadow-md">Toko Syahrul 🛒🥚🍜</h1>
+    </div>
+     <nav class="hidden lg:block">
+      <div class="flex justify-center space-x-8 pb-4">
+        <a href="/index" class="text-2xl text-white font-medium hover:text-blue-600 transition duration-200">🏠 Home</a>
+        <a href="/menu" class="text-2xl text-white font-medium hover:text-blue-600 transition duration-200">📋 Menu</a>
+        <a href="/pesan" class="text-2xl text-white font-medium hover:text-blue-600 transition duration-200">🛒 Pesan</a>
+      </div>
+    </nav>
+
+
+    <div class="lg:hidden absolute top-4 left-4">
+      <button id="menu-toggle"
+        class="p-2 text-white rounded-md bg-blue-900/50 backdrop-blur-sm hover:bg-blue-800 transition">
+        <span class="sr-only">Buka menu</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-6 w-6">
+          <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+
+
+    <div id="mobile-menu" class="hidden lg:hidden bg-blue-900/90 backdrop-blur-md p-6 space-y-4 text-center">
+      <a href="/index" class="block text-2xl text-white font-medium hover:text-blue-600 transition">🏠 Home</a>
+      <a href="/menu" class="block text-2xl text-white font-medium hover:text-blue-600 transition">📋 Menu</a>
+      <a href="/pesan" class="block text-2xl text-white font-medium hover:text-blue-600 transition">🛒 Pesan</a>
+    </div>
+  </header>
+
+  <div class="relative isolate px-6 pt-28 sm:pt-32 lg:px-8">
+
+    
+    <div class="flex flex-wrap justify-center gap-3 mb-8">
+      <button onclick="filterCategory('all')" class="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700">Semua</button>
+      <button onclick="filterCategory('makanan')" class="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700">Makanan Ringan & Kerupuk</button>
+      <button onclick="filterCategory('minuman')" class="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue -700">Minuman</button>
+      <button onclick="filterCategory('sembako')" class="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700">Sembako & Bumbu Dapur</button>
+      <button onclick="filterCategory('rokok')" class="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700">Rokok</button>
+      <button onclick="filterCategory('lainnya')" class="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700">Kebutuhan Rumah Tangga</button>
+    </div>
+
+    <div id="produk-grid"
+      class="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+
+     
+      <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/maitos.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Maitos</h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/gerysalutkeju.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Gery Salut Keju</h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/gerysalutmatcha.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Gery Salut Matcha</h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/spixmiegoreng.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Spix Mie Goreng</h3>
+          <p class="text-lg font-bold text-indigo-600">1.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/pilus.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Pilus</h3>
+          <p class="text-lg font-bold text-indigo-600">1.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/siip.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Siip</h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/cheetos.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Cheetos</h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/qtela.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Qtela</h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/sarigandum.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Sarigandum</h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/superstar.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Superstar</h3>
+          <p class="text-lg font-bold text-indigo-600">1.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/bengbeng.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Beng-Beng</h3>
+          <p class="text-lg font-bold text-indigo-600">2.500</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/kalpa.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Kalpa</h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/nextar.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Nextar</h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/upinipin.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Upin Ipin</h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/Choki-Choki.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Choki-Choki</h3>
+          <p class="text-lg font-bold text-indigo-600">1.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/romakelapa.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Roma Kelapa</h3>
+          <p class="text-lg font-bold text-indigo-600">10.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/oreo.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Oreo</h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/indomiegoreng.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Indomie Goreng</h3>
+          <p class="text-lg font-bold text-indigo-600">3.500</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/indomiesoto.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Indomie Soto</h3>
+          <p class="text-lg font-bold text-indigo-600">3.500</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/indomiecotomakassar.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Indomie Coto Makassar</h3>
+          <p class="text-lg font-bold text-indigo-600">3.500</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/indomiegorengaceh.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Indomie Goreng Aceh</h3>
+          <p class="text-lg font-bold text-indigo-600">3.500</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/indomiekaldu.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Indomie Kaldu</h3>
+          <p class="text-lg font-bold text-indigo-600">3.500</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/indomiekarayam.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Indomie Kari Ayam</h3>
+          <p class="text-lg font-bold text-indigo-600">3.500</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/indomiegorengrendang.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Indomie Goreng Rendang</h3>
+          <p class="text-lg font-bold text-indigo-600">3.500</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/sedaapgoreng.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Sedaap Goreng</h3>
+          <p class="text-lg font-bold text-indigo-600">3.500</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/sedaapsoto.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Sedaap Soto</h3>
+          <p class="text-lg font-bold text-indigo-600">3.500</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/intermiegoreng.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Intermie Goreng</h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300  rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition makanan fade-scale show">
+        <img src="gambar/intermiesoto.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Intermie Soto</h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/aqua1500.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Aqua 1500ml</h3>
+          <p class="text-lg font-bold text-indigo-600">7.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/aqua600.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Aqua 600ml</h3>
+          <p class="text-lg font-bold text-indigo-600">4.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/lemineral1500.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Le Mineral 1500ml</h3>
+          <p class="text-lg font-bold text-indigo-600">7.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/lemineral600.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Le Mineral 600ml</h3>
+          <p class="text-lg font-bold text-indigo-600">4.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/club1500.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Club 1500ml</h3>
+          <p class="text-lg font-bold text-indigo-600">7.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/tehkotak.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Teh Kotak</h3>
+          <p class="text-lg font-bold text-indigo-600">5.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/tehpucuk.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Teh Pucuk</h3>
+          <p class="text-lg font-bold text-indigo-600">5.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/kopigolda.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Kopi Golda</h3>
+          <p class="text-lg font-bold text-indigo-600">5.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/kopiabcbotol.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Kopi ABC Botol</h3>
+          <p class="text-lg font-bold text-indigo-600">5.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/gooddaybotol.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Kopi GoodDay Botol</h3>
+          <p class="text-lg font-bold text-indigo-600">7.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/ultramilk125.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Ultramilk 125ml</h3>
+          <p class="text-lg font-bold text-indigo-600">4.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/ultramilk200.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Ultramilk 200ml</h3>
+          <p class="text-lg font-bold text-indigo-600">6.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/ultramilk250.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Ultramilk 250ml</h3>
+          <p class="text-lg font-bold text-indigo-600">7.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/lasegar.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Lasegar</h3>
+          <p class="text-lg font-bold text-indigo-600">6.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/sprite.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Sprite</h3>
+          <p class="text-lg font-bold text-indigo-600">6.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/pocari.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Pocari Sweat</h3>
+          <p class="text-lg font-bold text-indigo-600">7.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/nipismadu.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Nipis Madu</h3>
+          <p class="text-lg font-bold text-indigo-600">6.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/susuberuang.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Susu Beruang</h3>
+          <p class="text-lg font-bold text-indigo-600">10.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/youc.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">You C 1000 </h3>
+          <p class="text-lg font-bold text-indigo-600">12.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/frisianflagkaleng.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Susu FrisianFlag Kaleng</h3>
+          <p class="text-lg font-bold text-indigo-600">14.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/capenak.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Susu Cap Enak Kaleng </h3>
+          <p class="text-lg font-bold text-indigo-600">14.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/omela.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Susu Omela Kaleng </h3>
+          <p class="text-lg font-bold text-indigo-600">13.000</p>
+        </div>
+      </div>
+      
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/sirupabc.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Sirup ABC Jeruk</h3>
+          <p class="text-lg font-bold text-indigo-600">15.000</p>
+        </div>
+      </div>
+
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/kapalapi.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Kopi Kapal Api Sachet</h3>
+          <p class="text-lg font-bold text-indigo-600">1.500</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/goddaymerah.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Kopi GoodDay Merah Sachet</h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/gooddaybiru.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Kopi GoodDay Biru Sachet </h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/gooddaycappucino.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Kopi GoodDay Cappucino Sachet </h3>
+          <p class="text-lg font-bold text-indigo-600">2.500</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/dancow.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Susu Dancow Sachet </h3>
+          <p class="text-lg font-bold text-indigo-600">5.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/energen.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Energen </h3>
+          <p class="text-lg font-bold text-indigo-600">2.500</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/milosachet.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Susu Milo Sachet </h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/sariwangi.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Teh SariWangi Sachet </h3>
+          <p class="text-lg font-bold text-indigo-600">2.500</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/frisianflagsachet.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Susu FrisianFlag Sachet </h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/extrajoss.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">ExtraJoss </h3>
+          <p class="text-lg font-bold text-indigo-600">1.500</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/kukubima.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Kukubima </h3>
+          <p class="text-lg font-bold text-indigo-600">1.500</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/airgelasdus.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Air Gelas Celebes 1 Dus</h3>
+          <p class="text-lg font-bold text-indigo-600">18.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/mountea.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Mountea </h3>
+          <p class="text-lg font-bold text-indigo-600">1.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/tehgelas.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Teh Gelas </h3>
+          <p class="text-lg font-bold text-indigo-600">1.000</p>
+        </div>
+      </div>
+      
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/kopikap.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Kopikap </h3>
+          <p class="text-lg font-bold text-indigo-600">1.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/panther.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Panther </h3>
+          <p class="text-lg font-bold text-indigo-600">1.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/kokodrink.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Okky Jelly Koko Drink </h3>
+          <p class="text-lg font-bold text-indigo-600">1.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/okkyjelydrink.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Okky Jelly Drink </h3>
+          <p class="text-lg font-bold text-indigo-600">1.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/okkyjelybig.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Okky Jelly Drink Big </h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition minuman fade-scale show">
+        <img src="gambar/galon.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Air Galon</h3>
+          <p class="text-lg font-bold text-indigo-600">5.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/telurayam.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Telur Ayam</h3>
+          <p class="text-lg font-bold text-indigo-600">2.000/Butir</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/minyakkita.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Minyak Kita 1L</h3>
+          <p class="text-lg font-bold text-indigo-600">20.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/kuncimas.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Minyak Kunci Mas 2L </h3>
+          <p class="text-lg font-bold text-indigo-600">44.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/minyakgelas.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Minyak Gelas Rose Brand</h3>
+          <p class="text-lg font-bold text-indigo-600">6.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/gula.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Gula 1Kg</h3>
+          <p class="text-lg font-bold text-indigo-600">21.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/gula.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Gula 500g</h3>
+          <p class="text-lg font-bold text-indigo-600">12.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/gaslpg.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Gas LPG 3Kg</h3>
+          <p class="text-lg font-bold text-indigo-600">23.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/tepungterigukompas1kg.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Tepung Terigu Kompas 1Kg</h3>
+          <p class="text-lg font-bold text-indigo-600">14.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/tepungterigugatot500g.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Tepung Terigu Gatot Kaca 500g</h3>
+          <p class="text-lg font-bold text-indigo-600">7.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/tepungtapioka.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Tepung Tapioka Rumah Kelinci 500g</h3>
+          <p class="text-lg font-bold text-indigo-600">9.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/tepungberasrose.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Tepung Beras Rose Brand 500g</h3>
+          <p class="text-lg font-bold text-indigo-600">10.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/tepungberasketanrose.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Tepung Beras Ketan Rose Brand 500g</h3>
+          <p class="text-lg font-bold text-indigo-600">14.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/bijag.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Bijag</h3>
+          <p class="text-lg font-bold text-indigo-600">9.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/kecapbotol.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Kecap Botol ABC 130ml</h3>
+          <p class="text-lg font-bold text-indigo-600">11.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/lombokbotol.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Lombok Botol ABC 130ml</h3>
+          <p class="text-lg font-bold text-indigo-600">10.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/kecapadinatabantal.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Kecap Adinata Bantal 620ml</h3>
+          <p class="text-lg font-bold text-indigo-600">6.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/lombokadinatabantal.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Lombok Adinata Bantal 620ml</h3>
+          <p class="text-lg font-bold text-indigo-600">6.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/micinbesar.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Micin Ajinomoto 90g</h3>
+          <p class="text-lg font-bold text-indigo-600">6.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/micinkecill.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Micin Ajinomoto 16g</h3>
+          <p class="text-lg font-bold text-indigo-600">1.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/garamhalus.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Garam Meja Halus 500g</h3>
+          <p class="text-lg font-bold text-indigo-600">6.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/garamkasar.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Garam Kasar 400g</h3>
+          <p class="text-lg font-bold text-indigo-600">4.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/tepungserbaguna.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Sajiku Tepung Serbaguna 75g</h3>
+          <p class="text-lg font-bold text-indigo-600">3.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/amandamargarin.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Amanda Margarin Serbaguna 200g</h3>
+          <p class="text-lg font-bold text-indigo-600">8.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/bumbunasgor.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Sajiku Bumbu Nasi Goreng 20g</h3>
+          <p class="text-lg font-bold text-indigo-600">2.500</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/masako.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Masako Sachet</h3>
+          <p class="text-lg font-bold text-indigo-600">500</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/royco.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Royco Sachet</h3>
+          <p class="text-lg font-bold text-indigo-600">500</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/kecapsachet.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Kecap ABC Sachet</h3>
+          <p class="text-lg font-bold text-indigo-600">500</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/kunyitbubuk.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Desaku Kunyit Bubuk 5g</h3>
+          <p class="text-lg font-bold text-indigo-600">1.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/ketumbarbubuk.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Desaku Ketumbar Bubuk 12,5g</h3>
+          <p class="text-lg font-bold text-indigo-600">8.000</p>
+        </div>
+      </div>
+
+       <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition sembako fade-scale show">
+        <img src="gambar/mericabubuk.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Ladaku Merica Bubuk 2,5g</h3>
+          <p class="text-lg font-bold text-indigo-600">1.000</p>
+        </div>
+      </div>
+
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition rokok fade-scale show">
+        <img src="gambar/sempurna16.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Sampoerna 16</h3>
+          <p class="text-lg font-bold text-indigo-600">36.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition rokok fade-scale show">
+        <img src="gambar/sempurna12.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Sampoerna 12</h3>
+          <p class="text-lg font-bold text-indigo-600">27.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition rokok fade-scale show">
+        <img src="gambar/malborohitam20.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Marlboro Hitam 20</h3>
+          <p class="text-lg font-bold text-indigo-600">40.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition rokok fade-scale show">
+        <img src="gambar/malborohitam16.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Marlboro Hitam 16</h3>
+          <p class="text-lg font-bold text-indigo-600">33.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition rokok fade-scale show">
+        <img src="gambar/malborohitam12.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Marlboro Hitam 12</h3>
+          <p class="text-lg font-bold text-indigo-600">25.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition rokok fade-scale show">
+        <img src="gambar/malboroputih.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Marlboro Putih </h3>
+          <p class="text-lg font-bold text-indigo-600">53.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition rokok fade-scale show">
+        <img src="gambar/malborobiru.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Marlboro Biru</h3>
+          <p class="text-lg font-bold text-indigo-600">53.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition rokok fade-scale show">
+        <img src="gambar/malboromerah.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Marlboro Merah</h3>
+          <p class="text-lg font-bold text-indigo-600">53.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition rokok fade-scale show">
+        <img src="gambar/surya16.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Surya 16</h3>
+          <p class="text-lg font-bold text-indigo-600">36.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition rokok fade-scale show">
+        <img src="gambar/surya12.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Surya 12</h3>
+          <p class="text-lg font-bold text-indigo-600">27.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition rokok fade-scale show">
+        <img src="gambar/troy.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Troy </h3>
+          <p class="text-lg font-bold text-indigo-600">30.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition rokok fade-scale show">
+        <img src="gambar/nationgold.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Nation Gold</h3>
+          <p class="text-lg font-bold text-indigo-600">26.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition rokok fade-scale show">
+        <img src="gambar/classmild16.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Classmild 16</h3>
+          <p class="text-lg font-bold text-indigo-600">30.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition rokok fade-scale show">
+        <img src="gambar/classmild12.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Classmild 12</h3>
+          <p class="text-lg font-bold text-indigo-600">22.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition rokok fade-scale show">
+        <img src="gambar/classmildred.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Classmild RedMax</h3>
+          <p class="text-lg font-bold text-indigo-600">25.000</p>
+        </div>
+      </div>
+
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition rokok fade-scale show">
+        <img src="gambar/laice.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">LA Ice </h3>
+          <p class="text-lg font-bold text-indigo-600">35.000</p>
+        </div>
+      </div>
+       
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/salonpas.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Salonpas</h3>
+          <p class="text-lg font-bold text-indigo-600">2.000</p>
+        </div>
+      </div>
+      
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/popoks.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Popok Sweety S</h3>
+          <p class="text-lg font-bold text-indigo-600">2.500</p>
+        </div>
+      </div>
+       
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/popokm.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Popok Sweety M</h3>
+          <p class="text-lg font-bold text-indigo-600">3.000</p>
+        </div>
+      </div>
+       
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/popokl.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Popok Sweety L</h3>
+          <p class="text-lg font-bold text-indigo-600">3.000</p>
+        </div>
+      </div>
+       
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/popokxl.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Popok Sweety XL</h3>
+          <p class="text-lg font-bold text-indigo-600">3.500</p>
+        </div>
+      </div>
+       
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/softexpink.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Softex Laurier Pink</h3>
+          <p class="text-lg font-bold text-indigo-600">1.000</p>
+        </div>
+      </div>
+       
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/softexhitam.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Softex Charm Hitam</h3>
+          <p class="text-lg font-bold text-indigo-600">3.500</p>
+        </div>
+      </div>
+       
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/downny.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Downy Sachet</h3>
+          <p class="text-lg font-bold text-indigo-600">500</p>
+        </div>
+      </div>
+       
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/molto.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Molto Sachet</h3>
+          <p class="text-lg font-bold text-indigo-600">500</p>
+        </div>
+      </div>
+       
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/sampoclear.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Shampo Clear Sachet</h3>
+          <p class="text-lg font-bold text-indigo-600">500</p>
+        </div>
+      </div>
+       
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/sampolifebuoy.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Shampo Lifebuoy Sachet</h3>
+          <p class="text-lg font-bold text-indigo-600">500</p>
+        </div>
+      </div>
+       
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/samposunsilk.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Shampo Sunsilk Sachet</h3>
+          <p class="text-lg font-bold text-indigo-600">500</p>
+        </div>
+      </div>
+       
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/sampopantene.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Shampo Pantene Sachet</h3>
+          <p class="text-lg font-bold text-indigo-600">500</p>
+        </div>
+      </div>
+       
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/sampoheadnsolder.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Shampo Head&Shoulders Sachet</h3>
+          <p class="text-lg font-bold text-indigo-600">500</p>
+        </div>
+      </div>
+       
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/sabunshinzui.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Sabun Batang Shinzui</h3>
+          <p class="text-lg font-bold text-indigo-600">6.000</p>
+        </div>
+      </div>
+       
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/sabunlifebuoy.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Sabun Batang Lifebuoy</h3>
+          <p class="text-lg font-bold text-indigo-600">4.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/pepsodent75g.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Odol Pepsodent 75g</h3>
+          <p class="text-lg font-bold text-indigo-600">7.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/pepsodent190g.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Odol Pepsodent 190g</h3>
+          <p class="text-lg font-bold text-indigo-600">16.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/boom.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Boom Deterjen Bubuk</h3>
+          <p class="text-lg font-bold text-indigo-600">6.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/rinsocair.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Rinso Cair Sachet</h3>
+          <p class="text-lg font-bold text-indigo-600">1.000</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-blue-300 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition lainnya fade-scale show">
+        <img src="gambar/rinsobubuk.jpg" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">Rinso Bubuk Sachet</h3>
+          <p class="text-lg font-bold text-indigo-600">1.000</p>
+        </div>
+      </div>
+
+
+      
+
+  
+
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    const toggleBtn = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    toggleBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+    document.querySelectorAll("#mobile-menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+    function filterCategory(category) {
+      const items = document.querySelectorAll("#produk-grid > div");
+      items.forEach(item => {
+        if (category === "all" || item.classList.contains(category)) {
+          item.classList.add("show");
+          item.style.display = "block";
+          setTimeout(() => item.classList.add("show"), 10);
+        } else {
+          item.classList.remove("show");
+          setTimeout(() => item.style.display = "none", 400);
+        }
+      });
+    }
+
+  $(document).ready(function () {
+  let isAnimating = false;
+
+  $("#menu-toggle").click(function () {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const $menu = $("#mobile-menu");
+    const isOpen = $menu.hasClass("open");
+
+    if (isOpen) {
+      // Tutup
+      $menu.animate(
+        { height: 0, opacity: 0 },
+        300,
+        function () {
+          $(this).removeClass("open").css({ height: "", opacity: "" });
+          isAnimating = false;
+        }
+      );
+    } else {
+      // Buka — hitung tinggi konten
+      const targetHeight = $menu.get(0).scrollHeight;
+      $menu
+        .css({ height: 0, opacity: 0 })
+        .animate(
+          { height: targetHeight, opacity: 1 },
+          300,
+          function () {
+            $(this).addClass("open").css("height", "");
+            isAnimating = false;
+          }
+        );
+    }
+  });
+
+
+  $("#mobile-menu a").click(function () {
+    if ($("#mobile-menu").hasClass("open") && !isAnimating) {
+      isAnimating = true;
+      $("#mobile-menu").animate(
+        { height: 0, opacity: 0 },
+        300,
+        function () {
+          $(this).removeClass("open").css({ height: "", opacity: "" });
+          isAnimating = false;
+        }
+      );
+    }
+  });
+});
+  </script>
+
+</body>
+</html>
